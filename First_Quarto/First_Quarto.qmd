@@ -1,0 +1,31 @@
+---
+title: "First_Quarto"
+editor:
+  render-on-save: true
+---
+
+## Quarto
+
+Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <https://quarto.org>. Test
+
+```{python}
+#| echo: false
+#| message: false
+
+import pandas as pd
+import seaborn as sns 
+from palmerpenguins import load_penguins
+sns.set_style('whitegrid')
+
+penguins = load_penguins()
+
+g = sns.lmplot(x="flipper_length_mm",
+               y="body_mass_g",
+               hue="species",
+               height=7,
+               data=penguins,
+               palette=['#FF8C00','#159090','#A034F0'])
+g.set_xlabels('Flipper Length')
+g.set_ylabels('Body Mass')
+```
+
